@@ -1,0 +1,1109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roblox Awards - Claim Free Rewards</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary: #4285F4;
+            --secondary: #34A853;
+            --accent: #FBBC05;
+            --danger: #EA4335;
+            --dark: #1a1a2e;
+            --light: #f8f9fa;
+            --gray: #6c757d;
+        }
+
+        body {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: var(--light);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* Header Styles */
+        header {
+            padding: 20px 0;
+            background-color: rgba(26, 26, 46, 0.9);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--light);
+        }
+
+        .logo i {
+            color: var(--primary);
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        nav a {
+            color: var(--light);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--accent);
+        }
+
+        .btn {
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: none;
+            font-size: 1rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 100px 0;
+            text-align: center;
+            background: radial-gradient(circle at top right, rgba(66, 133, 244, 0.2), transparent 50%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(66, 133, 244, 0.1), rgba(251, 188, 5, 0.1));
+            z-index: -1;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            background: linear-gradient(to right, var(--accent), var(--primary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .btn-primary {
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 15px 35px;
+            font-size: 1.1rem;
+            border-radius: 50px;
+            box-shadow: 0 5px 15px rgba(66, 133, 244, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(66, 133, 244, 0.6);
+        }
+
+        /* Features Section */
+        .features {
+            padding: 80px 0;
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: var(--light);
+        }
+
+        .section-title p {
+            color: rgba(255, 255, 255, 0.7);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            transition: transform 0.3s, background 0.3s;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .feature-icon {
+            width: 70px;
+            height: 70px;
+            margin: 0 auto 20px;
+            background: rgba(66, 133, 244, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            color: var(--primary);
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--light);
+        }
+
+        .feature-card p {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* Rewards Section */
+        .rewards {
+            padding: 80px 0;
+        }
+
+        .rewards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .reward-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: transform 0.3s;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .reward-card:hover {
+            transform: scale(1.05);
+        }
+
+        .reward-image {
+            height: 180px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .robux-bg {
+            background: linear-gradient(45deg, #ff4d4d, #ff9966);
+        }
+
+        .shirt-bg {
+            background: linear-gradient(45deg, #4285F4, #34A853);
+        }
+
+        .hat-bg {
+            background: linear-gradient(45deg, #FBBC05, #EA4335);
+        }
+
+        .game-bg {
+            background: linear-gradient(45deg, #9C27B0, #673AB7);
+        }
+
+        .reward-content {
+            padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .reward-content h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--light);
+        }
+
+        .reward-content p {
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+            flex-grow: 1;
+        }
+
+        .reward-value {
+            display: inline-block;
+            background: var(--accent);
+            color: var(--dark);
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        .btn-claim {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            width: 100%;
+        }
+
+        .btn-claim:hover {
+            background: #3367d6;
+            transform: translateY(-2px);
+        }
+
+        /* How It Works */
+        .how-it-works {
+            padding: 80px 0;
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        .steps {
+            display: flex;
+            justify-content: space-between;
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .steps::before {
+            content: '';
+            position: absolute;
+            top: 40px;
+            left: 10%;
+            right: 10%;
+            height: 3px;
+            background: var(--primary);
+            z-index: 1;
+        }
+
+        .step {
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            flex: 1;
+        }
+
+        .step-number {
+            width: 80px;
+            height: 80px;
+            background: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: white;
+            border: 5px solid var(--dark);
+        }
+
+        .step h3 {
+            margin-bottom: 10px;
+            color: var(--light);
+        }
+
+        .step p {
+            color: rgba(255, 255, 255, 0.7);
+            max-width: 200px;
+            margin: 0 auto;
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            padding: 80px 0;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .testimonial-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 30px;
+            transition: transform 0.3s;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .testimonial-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .testimonial-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 15px;
+            border: 3px solid var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(66, 133, 244, 0.2);
+            color: var(--primary);
+            font-size: 1.5rem;
+        }
+
+        .testimonial-info h4 {
+            font-size: 1.2rem;
+            color: var(--light);
+        }
+
+        .testimonial-info p {
+            color: var(--accent);
+            font-size: 0.9rem;
+        }
+
+        .testimonial-text {
+            color: rgba(255, 255, 255, 0.8);
+            font-style: italic;
+            line-height: 1.5;
+        }
+
+        /* CTA Section */
+        .cta {
+            padding: 100px 0;
+            text-align: center;
+            background: radial-gradient(circle at bottom left, rgba(52, 168, 83, 0.2), transparent 50%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(66, 133, 244, 0.1), rgba(251, 188, 5, 0.1));
+            z-index: -1;
+        }
+
+        .cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--light);
+        }
+
+        .cta p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto 30px;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 50px 0 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-column h3 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: var(--light);
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-column a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-column a:hover {
+            color: var(--accent);
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-icons a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: var(--light);
+            transition: all 0.3s;
+        }
+
+        .social-icons a:hover {
+            background: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.9rem;
+        }
+
+        /* Claim Process Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            background: var(--dark);
+            border-radius: 15px;
+            padding: 30px;
+            width: 90%;
+            max-width: 500px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            position: relative;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: none;
+            border: none;
+            color: var(--light);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .modal-icon {
+            font-size: 4rem;
+            color: var(--accent);
+            margin-bottom: 20px;
+        }
+
+        .modal h2 {
+            margin-bottom: 15px;
+            color: var(--light);
+        }
+
+        .modal p {
+            margin-bottom: 20px;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .progress-bar {
+            height: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 5px;
+            margin: 20px 0;
+            overflow: hidden;
+        }
+
+        .progress {
+            height: 100%;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            width: 0%;
+            transition: width 2s ease-in-out;
+        }
+
+        .claim-steps {
+            text-align: left;
+            margin: 20px 0;
+        }
+
+        .claim-step {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            opacity: 0.5;
+            transition: opacity 0.5s;
+        }
+
+        .claim-step.active {
+            opacity: 1;
+        }
+
+        .step-check {
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 10px;
+            color: transparent;
+        }
+
+        .claim-step.active .step-check {
+            background: var(--secondary);
+            color: white;
+        }
+
+        .claim-step.completed .step-check {
+            background: var(--secondary);
+            color: white;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            nav ul {
+                gap: 15px;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .steps {
+                flex-direction: column;
+                gap: 40px;
+            }
+
+            .steps::before {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-trophy"></i>
+                    Roblox<span>Awards</span>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Rewards</a></li>
+                        <li><a href="#">How It Works</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </nav>
+                <button class="btn btn-primary" id="header-claim-btn">Claim Rewards</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Win Amazing Roblox Rewards</h1>
+            <p>Claim free Robux, exclusive items, and limited edition accessories just by completing simple tasks. Join thousands of players who've already earned incredible rewards!</p>
+            <button class="btn btn-primary" id="hero-claim-btn">Claim Your Free Rewards Now</button>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <div class="section-title">
+                <h2>Why Choose Roblox Awards?</h2>
+                <p>We provide the easiest and most reliable way to get free Roblox items and currency</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-gem"></i>
+                    </div>
+                    <h3>Premium Rewards</h3>
+                    <p>Get access to exclusive items, limited edition accessories, and premium currency.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>100% Safe</h3>
+                    <p>All our methods are completely safe and compliant with Roblox's terms of service.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>Instant Delivery</h3>
+                    <p>Receive your rewards instantly after completing simple tasks and challenges.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rewards Section -->
+    <section class="rewards">
+        <div class="container">
+            <div class="section-title">
+                <h2>Popular Rewards</h2>
+                <p>Check out some of the amazing rewards you can claim for free</p>
+            </div>
+            <div class="rewards-grid">
+                <div class="reward-card">
+                    <div class=https://i.postimg.cc/pVkJGtB3/1883px-Robux-2019-Logo-gold-svg.png">
+                        <i class="fas fa-coins"></i>
+                    </div>
+                    <div class="reward-content">
+					<img src="https://i.postimg.cc/pVkJGtB3/1883px-Robux-2019-Logo-gold-svg.png" alt="Robux Image">
+
+                        <h3>Free Robux</h3>
+                        <p>Get free Robux to spend on avatar items, game passes, and more.</p>
+                        <span class="reward-value">500 Robux</span>
+                        <button class="btn-claim" data-reward="Robux">Claim Now</button>
+                    </div>
+                </div>
+                <div class="reward-card">
+                    <div class="https://i.postimg.cc/QN1NqXky/2-283af89d.png">
+                        <i class="fas fa-tshirt"></i>
+                    </div>
+                    <div class="reward-content">
+					<img src="https://i.postimg.cc/QN1NqXky/2-283af89d.png" alt="Robux Image">
+
+                        <h3>Limited Edition Shirt</h3>
+                        <p>Exclusive shirt only available through our rewards program.</p>
+                        <span class="reward-value">Limited</span>
+                        <button class="btn-claim" data-reward="Limited Edition Shirt">Claim Now</button>
+                    </div>
+                </div>
+                <div class="reward-card">
+                    <div class="https://i.postimg.cc/PxbcPFYv/no-Filter.png">
+                        <i class="fas fa-hat-cowboy"></i>
+                    </div>
+                    <div class="reward-content">
+					<img src="https://i.postimg.cc/PxbcPFYv/no-Filter.png" alt="Robux Image">
+
+                        <h3>Dominus Hat</h3>
+                        <p>Rare and highly sought-after Dominus head accessory.</p>
+                        <span class="reward-value">Ultra Rare</span>
+                        <button class="btn-claim" data-reward="Dominus Hat">Claim Now</button>
+                    </div>
+                </div>
+                <div class="reward-card">
+                    <div class="" alt="Robux Image">
+">
+                        <i class="fas fa-gamepad"></i>
+                    </div>
+                    <div class="reward-content">
+					<img src="https://i.postimg.cc/C10rTHXN/720-cb-20240705182519.webp" alt="Robux Image">
+
+                        <h3>Game Passes</h3>
+                        <p>Free access to premium game passes for popular Roblox games.</p>
+                        <span class="reward-value">Various</span>
+                        <button class="btn-claim" data-reward="Game Passes">Claim Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="how-it-works">
+        <div class="container">
+            <div class="section-title">
+                <h2>How It Works</h2>
+                <p>Getting your free rewards is simple and only takes a few minutes</p>
+            </div>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Complete Tasks</h3>
+                    <p>Finish simple tasks like watching videos or taking surveys</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Earn Points</h3>
+                    <p>Collect points for each completed task</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Claim Rewards</h3>
+                    <p>Redeem your points for amazing Roblox rewards</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>What Our Users Say</h2>
+                <p>Thousands of Roblox players have already claimed amazing rewards</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="testimonial-info">
+                            <h4>Alex Johnson</h4>
+                            <p>Roblox Player</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-text">
+                        "I couldn't believe it when I got 500 free Robux just for completing a few surveys! This site is legit and the rewards came instantly."
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="testimonial-info">
+                            <h4>Sophia Williams</h4>
+                            <p>Roblox Creator</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-text">
+                        "As a game developer, getting free game passes helped me promote my game without spending real money. Highly recommended!"
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="testimonial-info">
+                            <h4>Marcus Chen</h4>
+                            <p>Roblox Enthusiast</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-text">
+                        "The limited edition items I got from this site made my avatar stand out. My friends keep asking me where I got them!"
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <h2>Start Earning Free Rewards Today!</h2>
+            <p>Join our community of thousands of Roblox players who are already enjoying free items and currency.</p>
+            <button class="btn btn-primary" id="cta-claim-btn">Get Started Now</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Roblox Awards</h3>
+                    <p>The #1 platform for free Roblox rewards, items, and currency.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-discord"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Rewards</a></li>
+                        <li><a href="#">How It Works</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                        <li><a href="#">Disclaimer</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <ul>
+                        <li><a href="#">Support</a></li>
+                        <li><a href="#">Partnerships</a></li>
+                        <li><a href="#">Report Issue</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Roblox Awards. This site is not affiliated with Roblox Corporation. All trademarks are property of their respective owners.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Claim Process Modal -->
+    <div class="modal" id="claim-modal">
+        <div class="modal-content">
+            <button class="close-modal" id="close-modal">&times;</button>
+            <div class="modal-icon">
+                <i class="fas fa-gift"></i>
+            </div>
+            <h2>Claiming Your Reward</h2>
+            <p id="reward-text">Preparing your reward...</p>
+            
+            <div class="progress-bar">
+                <div class="progress" id="claim-progress"></div>
+            </div>
+            
+            <div class="claim-steps">
+                <div class="claim-step" id="step1">
+                    <div class="step-check"><i class="fas fa-check"></i></div>
+                    <div>Verifying your account</div>
+                </div>
+                <div class="claim-step" id="step2">
+                    <div class="step-check"><i class="fas fa-check"></i></div>
+                    <div>Processing your request</div>
+                </div>
+                <div class="claim-step" id="step3">
+                    <div class="step-check"><i class="fas fa-check"></i></div>
+                    <div>Delivering your reward</div>
+                </div>
+                <div class="claim-step" id="step4">
+                    <div class="step-check"><i class="fas fa-check"></i></div>
+                    <div>Reward claimed successfully!</div>
+                </div>
+            </div>
+            
+            <button class="btn btn-primary" id="start-claim" style="display: none;">Start Claim Process</button > 
+
+        </div>
+    </div>
+
+    <script>
+        // Claim buttons functionality
+        const claimButtons = document.querySelectorAll('.btn-claim, #header-claim-btn, #hero-claim-btn, #cta-claim-btn');
+        const modal = document.getElementById('claim-modal');
+        const closeModal = document.getElementById('close-modal');
+        const progressBar = document.getElementById('claim-progress');
+        const rewardText = document.getElementById('reward-text');
+        const startClaimBtn = document.getElementById('start-claim');
+        
+        let currentReward = "Robux";
+        
+        // Open modal when any claim button is clicked
+        claimButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                if (this.classList.contains('btn-claim')) {
+                    currentReward = this.getAttribute('data-reward');
+                    rewardText.textContent = `Preparing your ${currentReward} reward...`;
+                } else {
+                    currentReward = "Robux";
+                    rewardText.textContent = "Preparing your Robux reward...";
+                }
+                
+                modal.style.display = 'flex';
+                startClaimProcess();
+            });
+        });
+        
+        // Close modal
+        closeModal.addEventListener('click', function() {
+            modal.style.display = 'none';
+            resetClaimProcess();
+        });
+        
+        // Start claim process
+        function startClaimProcess() {
+            resetClaimProcess();
+            
+            // Show start button for main CTA buttons
+            if (!document.querySelector('.btn-claim').contains(event.target)) {
+                startClaimBtn.style.display = 'block';
+                startClaimBtn.addEventListener('click', function() {
+                    this.style.display = 'none';
+                    simulateClaimProcess();
+                });
+            } else {
+                simulateClaimProcess();
+            }
+        }
+        
+        // Simulate the claim process
+        function simulateClaimProcess() {
+            const steps = document.querySelectorAll('.claim-step');
+            let currentStep = 0;
+            
+            // Reset all steps
+            steps.forEach(step => {
+                step.classList.remove('active', 'completed');
+            });
+            
+            // Animate progress bar
+            progressBar.style.width = '0%';
+            setTimeout(() => {
+                progressBar.style.width = '100%';
+            }, 100);
+            
+            // Step 1: Verifying account
+            setTimeout(() => {
+                steps[0].classList.add('active');
+                rewardText.textContent = `Verifying your account for ${currentReward}...`;
+            }, 500);
+            
+            // Step 2: Processing request
+            setTimeout(() => {
+                steps[0].classList.remove('active');
+                steps[0].classList.add('completed');
+                steps[1].classList.add('active');
+                rewardText.textContent = `Processing your ${currentReward} request...`;
+            }, 2500);
+            
+            // Step 3: Delivering reward
+            setTimeout(() => {
+                steps[1].classList.remove('active');
+                steps[1].classList.add('completed');
+                steps[2].classList.add('active');
+                rewardText.textContent = `Delivering your ${currentReward}...`;
+            }, 4500);
+            
+            // Step 4: Success
+            setTimeout(() => {
+                steps[2].classList.remove('active');
+                steps[2].classList.add('completed');
+                steps[3].classList.add('active');
+                rewardText.textContent = `Congratulations! Your ${currentReward} has been claimed successfully!`;
+                
+                // Show success message
+                setTimeout(() => {
+                    window.location.href = "https://smrturl.co/a/sc5787172f2/556?s1="
+                    modal.style.display = 'none';
+                }, 1500);
+            }, 6500);
+        }
+        
+        // Reset claim process
+        function resetClaimProcess() {
+            const steps = document.querySelectorAll('.claim-step');
+            steps.forEach(step => {
+                step.classList.remove('active', 'completed');
+            });
+            progressBar.style.width = '0%';
+            startClaimBtn.style.display = 'none';
+        }
+        
+        // Simple animation for buttons
+        document.querySelectorAll('.btn').forEach(button => {
+            button.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-2px)';
+            });
+            
+            button.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+
+        // Add scroll effect to header
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.style.background = 'rgba(26, 26, 46, 0.95)';
+                header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
+            } else {
+                header.style.background = 'rgba(26, 26, 46, 0.9)';
+                header.style.boxShadow = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
