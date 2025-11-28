@@ -31,15 +31,15 @@
         }
 
         .container {
-            width: 100%;
-            max-width: 480px; /* ✅ focus 3la téléphone */
+            width: 90%;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 0 12px;
+            padding: 0 15px;
         }
 
         /* Header Styles */
         header {
-            padding: 14px 0;
+            padding: 20px 0;
             background-color: rgba(26, 26, 46, 0.9);
             position: sticky;
             top: 0;
@@ -52,14 +52,13 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            gap: 10px;
         }
 
         .logo {
             display: flex;
             align-items: center;
-            gap: 8px;
-            font-size: 1.4rem;
+            gap: 10px;
+            font-size: 1.8rem;
             font-weight: 700;
             color: var(--light);
         }
@@ -75,8 +74,7 @@
         nav ul {
             display: flex;
             list-style: none;
-            gap: 12px;
-            font-size: 0.8rem;
+            gap: 25px;
         }
 
         nav a {
@@ -91,18 +89,18 @@
         }
 
         .btn {
-            padding: 10px 16px;
+            padding: 10px 20px;
             border-radius: 8px;
             font-weight: 600;
             cursor: pointer;
             transition: all 0.3s;
             border: none;
-            font-size: 0.95rem;
+            font-size: 1rem;
         }
 
         /* Hero Section */
         .hero {
-            padding: 60px 0 50px; /* ✅ moins padding */
+            padding: 100px 0;
             text-align: center;
             background: radial-gradient(circle at top right, rgba(66, 133, 244, 0.2), transparent 50%);
             position: relative;
@@ -121,8 +119,8 @@
         }
 
         .hero h1 {
-            font-size: 2rem; /* ✅ sghar 3la mobile */
-            margin-bottom: 16px;
+            font-size: 3.5rem;
+            margin-bottom: 20px;
             background: linear-gradient(to right, var(--accent), var(--primary));
             -webkit-background-clip: text;
             background-clip: text;
@@ -130,20 +128,19 @@
         }
 
         .hero p {
-            font-size: 1rem;
-            max-width: 420px;
-            margin: 0 auto 20px;
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
             color: rgba(255, 255, 255, 0.8);
         }
 
         .btn-primary {
             background: linear-gradient(45deg, var(--primary), var(--secondary));
             color: white;
-            padding: 12px 20px;
-            font-size: 1rem;
+            padding: 15px 35px;
+            font-size: 1.1rem;
             border-radius: 50px;
             box-shadow: 0 5px 15px rgba(66, 133, 244, 0.4);
-            width: 100%; /* ✅ full-width button f téléphone */
         }
 
         .btn-primary:hover {
@@ -151,93 +148,86 @@
             box-shadow: 0 8px 20px rgba(66, 133, 244, 0.6);
         }
 
-        /* Sections */
-        .features,
-        .rewards,
-        .how-it-works,
-        .testimonials {
-            padding: 40px 0;
+        /* Features Section */
+        .features {
+            padding: 80px 0;
             background: rgba(255, 255, 255, 0.03);
-        }
-
-        .rewards,
-        .testimonials {
-            background: transparent;
         }
 
         .section-title {
             text-align: center;
-            margin-bottom: 25px;
+            margin-bottom: 50px;
         }
 
         .section-title h2 {
-            font-size: 1.7rem;
-            margin-bottom: 8px;
+            font-size: 2.5rem;
+            margin-bottom: 15px;
             color: var(--light);
         }
 
         .section-title p {
             color: rgba(255, 255, 255, 0.7);
-            max-width: 420px;
+            max-width: 600px;
             margin: 0 auto;
-            font-size: 0.95rem;
         }
 
-        /* Features Section */
         .features-grid {
             display: grid;
-            grid-template-columns: 1fr; /* ✅ colonne wa7da */
-            gap: 18px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
         }
 
         .feature-card {
             background: rgba(255, 255, 255, 0.05);
-            border-radius: 12px;
-            padding: 18px;
+            border-radius: 15px;
+            padding: 30px;
             text-align: center;
             transition: transform 0.3s, background 0.3s;
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .feature-card:hover {
-            transform: translateY(-4px);
+            transform: translateY(-10px);
             background: rgba(255, 255, 255, 0.08);
         }
 
         .feature-icon {
-            width: 52px;
-            height: 52px;
-            margin: 0 auto 12px;
+            width: 70px;
+            height: 70px;
+            margin: 0 auto 20px;
             background: rgba(66, 133, 244, 0.1);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.4rem;
+            font-size: 1.8rem;
             color: var(--primary);
         }
 
         .feature-card h3 {
-            font-size: 1.1rem;
-            margin-bottom: 10px;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
             color: var(--light);
         }
 
         .feature-card p {
             color: rgba(255, 255, 255, 0.7);
-            font-size: 0.9rem;
         }
 
         /* Rewards Section */
+        .rewards {
+            padding: 80px 0;
+        }
+
         .rewards-grid {
             display: grid;
-            grid-template-columns: 1fr; /* ✅ mobile column */
-            gap: 18px;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
         }
 
         .reward-card {
             background: rgba(255, 255, 255, 0.05);
-            border-radius: 12px;
+            border-radius: 15px;
             overflow: hidden;
             transition: transform 0.3s;
             border: 1px solid rgba(255, 255, 255, 0.1);
@@ -246,16 +236,18 @@
         }
 
         .reward-card:hover {
-            transform: scale(1.02);
+            transform: scale(1.05);
         }
 
         .reward-image {
-            height: 120px;
+            height: 180px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 2rem;
+            font-size: 3rem;
             color: white;
+            position: relative;
+            overflow: hidden;
         }
 
         .robux-bg {
@@ -274,40 +266,35 @@
             background: linear-gradient(45deg, #9C27B0, #673AB7);
         }
 
-        .reward-img {
-            width: 100%;
-            height: auto;
-            margin-bottom: 8px;
-            border-radius: 8px;
-        }
-
         .reward-content {
-            padding: 14px;
+            padding: 20px;
+            flex-grow: 1;
             display: flex;
             flex-direction: column;
         }
 
         .reward-content h3 {
-            font-size: 1.05rem;
-            margin-bottom: 6px;
+            font-size: 1.3rem;
+            margin-bottom: 10px;
             color: var(--light);
         }
 
         .reward-content p {
             color: rgba(255, 255, 255, 0.7);
-            margin-bottom: 10px;
-            font-size: 0.85rem;
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+            flex-grow: 1;
         }
 
         .reward-value {
             display: inline-block;
             background: var(--accent);
             color: var(--dark);
-            padding: 3px 10px;
+            padding: 5px 10px;
             border-radius: 20px;
             font-weight: 700;
-            font-size: 0.8rem;
-            margin-bottom: 10px;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
         }
 
         .btn-claim {
@@ -320,7 +307,6 @@
             cursor: pointer;
             transition: all 0.3s;
             width: 100%;
-            font-size: 0.95rem;
         }
 
         .btn-claim:hover {
@@ -330,107 +316,125 @@
 
         /* How It Works */
         .how-it-works {
+            padding: 80px 0;
             background: rgba(255, 255, 255, 0.03);
         }
 
         .steps {
             display: flex;
-            flex-direction: column; /* ✅ colonne f téléphone */
-            gap: 20px;
+            justify-content: space-between;
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .steps::before {
+            content: '';
+            position: absolute;
+            top: 40px;
+            left: 10%;
+            right: 10%;
+            height: 3px;
+            background: var(--primary);
+            z-index: 1;
         }
 
         .step {
             text-align: center;
+            position: relative;
+            z-index: 2;
+            flex: 1;
         }
 
         .step-number {
-            width: 60px;
-            height: 60px;
+            width: 80px;
+            height: 80px;
             background: var(--primary);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 10px;
-            font-size: 1.4rem;
+            margin: 0 auto 20px;
+            font-size: 1.8rem;
             font-weight: 700;
             color: white;
-            border: 4px solid var(--dark);
+            border: 5px solid var(--dark);
         }
 
         .step h3 {
-            margin-bottom: 6px;
+            margin-bottom: 10px;
             color: var(--light);
-            font-size: 1rem;
         }
 
         .step p {
             color: rgba(255, 255, 255, 0.7);
-            max-width: 260px;
+            max-width: 200px;
             margin: 0 auto;
-            font-size: 0.85rem;
         }
 
         /* Testimonials Section */
+        .testimonials {
+            padding: 80px 0;
+        }
+
         .testimonials-grid {
             display: grid;
-            grid-template-columns: 1fr;
-            gap: 18px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
         }
 
         .testimonial-card {
             background: rgba(255, 255, 255, 0.05);
-            border-radius: 12px;
-            padding: 18px;
+            border-radius: 15px;
+            padding: 30px;
             transition: transform 0.3s;
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .testimonial-card:hover {
-            transform: translateY(-3px);
+            transform: translateY(-5px);
         }
 
         .testimonial-header {
             display: flex;
             align-items: center;
-            margin-bottom: 12px;
+            margin-bottom: 20px;
         }
 
         .testimonial-avatar {
-            width: 46px;
-            height: 46px;
+            width: 60px;
+            height: 60px;
             border-radius: 50%;
             overflow: hidden;
-            margin-right: 12px;
+            margin-right: 15px;
             border: 3px solid var(--primary);
             display: flex;
             align-items: center;
             justify-content: center;
             background: rgba(66, 133, 244, 0.2);
             color: var(--primary);
-            font-size: 1.2rem;
+            font-size: 1.5rem;
         }
 
         .testimonial-info h4 {
-            font-size: 1rem;
+            font-size: 1.2rem;
             color: var(--light);
         }
 
         .testimonial-info p {
             color: var(--accent);
-            font-size: 0.8rem;
+            font-size: 0.9rem;
         }
 
         .testimonial-text {
             color: rgba(255, 255, 255, 0.8);
             font-style: italic;
-            line-height: 1.4;
-            font-size: 0.85rem;
+            line-height: 1.5;
         }
 
         /* CTA Section */
         .cta {
-            padding: 50px 0;
+            padding: 100px 0;
             text-align: center;
             background: radial-gradient(circle at bottom left, rgba(52, 168, 83, 0.2), transparent 50%);
             position: relative;
@@ -449,36 +453,35 @@
         }
 
         .cta h2 {
-            font-size: 1.7rem;
-            margin-bottom: 12px;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
             color: var(--light);
         }
 
         .cta p {
-            font-size: 0.95rem;
-            max-width: 420px;
-            margin: 0 auto 20px;
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto 30px;
             color: rgba(255, 255, 255, 0.8);
         }
 
         /* Footer */
         footer {
             background: rgba(0, 0, 0, 0.3);
-            padding: 30px 0 15px;
+            padding: 50px 0 20px;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .footer-content {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            margin-bottom: 20px;
-            font-size: 0.8rem;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
         }
 
         .footer-column h3 {
-            font-size: 0.95rem;
-            margin-bottom: 10px;
+            font-size: 1.2rem;
+            margin-bottom: 20px;
             color: var(--light);
         }
 
@@ -487,7 +490,7 @@
         }
 
         .footer-column ul li {
-            margin-bottom: 6px;
+            margin-bottom: 10px;
         }
 
         .footer-column a {
@@ -502,21 +505,20 @@
 
         .social-icons {
             display: flex;
-            gap: 10px;
-            margin-top: 10px;
+            gap: 15px;
+            margin-top: 20px;
         }
 
         .social-icons a {
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 32px;
-            height: 32px;
+            width: 40px;
+            height: 40px;
             background: rgba(255, 255, 255, 0.1);
             border-radius: 50%;
             color: var(--light);
             transition: all 0.3s;
-            font-size: 0.9rem;
         }
 
         .social-icons a:hover {
@@ -526,10 +528,10 @@
 
         .copyright {
             text-align: center;
-            padding-top: 10px;
+            padding-top: 20px;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
             color: rgba(255, 255, 255, 0.5);
-            font-size: 0.75rem;
+            font-size: 0.9rem;
         }
 
         /* Claim Process Modal */
@@ -549,9 +551,9 @@
         .modal-content {
             background: var(--dark);
             border-radius: 15px;
-            padding: 20px;
-            width: 92%;
-            max-width: 380px;
+            padding: 30px;
+            width: 90%;
+            max-width: 500px;
             text-align: center;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
             position: relative;
@@ -559,38 +561,36 @@
 
         .close-modal {
             position: absolute;
-            top: 10px;
-            right: 12px;
+            top: 15px;
+            right: 15px;
             background: none;
             border: none;
             color: var(--light);
-            font-size: 1.4rem;
+            font-size: 1.5rem;
             cursor: pointer;
         }
 
         .modal-icon {
-            font-size: 3rem;
+            font-size: 4rem;
             color: var(--accent);
-            margin-bottom: 12px;
+            margin-bottom: 20px;
         }
 
         .modal h2 {
-            margin-bottom: 10px;
+            margin-bottom: 15px;
             color: var(--light);
-            font-size: 1.2rem;
         }
 
         .modal p {
-            margin-bottom: 14px;
+            margin-bottom: 20px;
             color: rgba(255, 255, 255, 0.8);
-            font-size: 0.9rem;
         }
 
         .progress-bar {
-            height: 8px;
+            height: 10px;
             background: rgba(255, 255, 255, 0.1);
             border-radius: 5px;
-            margin: 14px 0;
+            margin: 20px 0;
             overflow: hidden;
         }
 
@@ -603,16 +603,15 @@
 
         .claim-steps {
             text-align: left;
-            margin: 12px 0;
+            margin: 20px 0;
         }
 
         .claim-step {
             display: flex;
             align-items: center;
-            margin-bottom: 8px;
+            margin-bottom: 15px;
             opacity: 0.5;
             transition: opacity 0.5s;
-            font-size: 0.85rem;
         }
 
         .claim-step.active {
@@ -620,39 +619,51 @@
         }
 
         .step-check {
-            width: 22px;
-            height: 22px;
+            width: 25px;
+            height: 25px;
             border-radius: 50%;
             background: rgba(255, 255, 255, 0.1);
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-right: 8px;
+            margin-right: 10px;
             color: transparent;
-            font-size: 0.85rem;
         }
 
-        .claim-step.active .step-check,
+        .claim-step.active .step-check {
+            background: var(--secondary);
+            color: white;
+        }
+
         .claim-step.completed .step-check {
             background: var(--secondary);
             color: white;
         }
 
-        #start-claim {
-            width: 100%;
-            margin-top: 10px;
-        }
-
-        /* Extra small tweaks */
-        @media (max-width: 360px) {
-            .hero h1 {
-                font-size: 1.7rem;
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 20px;
             }
+
             nav ul {
-                display: none; /* ✅ f téléphones sgharin, nikhfih menu */
+                gap: 15px;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .steps {
+                flex-direction: column;
+                gap: 40px;
+            }
+
+            .steps::before {
+                display: none;
             }
         }
-
     </style>
 </head>
 <body>
@@ -672,7 +683,7 @@
                         <li><a href="#">FAQ</a></li>
                     </ul>
                 </nav>
-                <button class="btn btn-primary" id="header-claim-btn">Claim</button>
+                <button class="btn btn-primary" id="header-claim-btn">Claim Rewards</button>
             </div>
         </div>
     </header>
@@ -681,8 +692,8 @@
     <section class="hero">
         <div class="container">
             <h1>Win Amazing Roblox Rewards</h1>
-            <p>Claim free Robux, exclusive items, and limited edition accessories just by completing simple tasks.</p>
-            <button class="btn btn-primary" id="hero-claim-btn">Claim Your Free Rewards</button>
+            <p>Claim free Robux, exclusive items, and limited edition accessories just by completing simple tasks. Join thousands of players who've already earned incredible rewards!</p>
+            <button class="btn btn-primary" id="hero-claim-btn">Claim Your Free Rewards Now</button>
         </div>
     </section>
 
@@ -728,50 +739,52 @@
             </div>
             <div class="rewards-grid">
                 <div class="reward-card">
-                    <div class="reward-image robux-bg">
+                    <div class=https://i.postimg.cc/pVkJGtB3/1883px-Robux-2019-Logo-gold-svg.png">
                         <i class="fas fa-coins"></i>
                     </div>
                     <div class="reward-content">
-                        <img class="reward-img" src="https://i.postimg.cc/pVkJGtB3/1883px-Robux-2019-Logo-gold-svg.png" alt="Robux">
+					<img src="https://i.postimg.cc/pVkJGtB3/1883px-Robux-2019-Logo-gold-svg.png" alt="Robux Image">
+
                         <h3>Free Robux</h3>
                         <p>Get free Robux to spend on avatar items, game passes, and more.</p>
                         <span class="reward-value">500 Robux</span>
                         <button class="btn-claim" data-reward="Robux">Claim Now</button>
                     </div>
                 </div>
-
                 <div class="reward-card">
-                    <div class="reward-image shirt-bg">
+                    <div class="https://i.postimg.cc/QN1NqXky/2-283af89d.png">
                         <i class="fas fa-tshirt"></i>
                     </div>
                     <div class="reward-content">
-                        <img class="reward-img" src="https://i.postimg.cc/QN1NqXky/2-283af89d.png" alt="Limited Shirt">
+					<img src="https://i.postimg.cc/QN1NqXky/2-283af89d.png" alt="Robux Image">
+
                         <h3>Limited Edition Shirt</h3>
                         <p>Exclusive shirt only available through our rewards program.</p>
                         <span class="reward-value">Limited</span>
                         <button class="btn-claim" data-reward="Limited Edition Shirt">Claim Now</button>
                     </div>
                 </div>
-
                 <div class="reward-card">
-                    <div class="reward-image hat-bg">
+                    <div class="https://i.postimg.cc/PxbcPFYv/no-Filter.png">
                         <i class="fas fa-hat-cowboy"></i>
                     </div>
                     <div class="reward-content">
-                        <img class="reward-img" src="https://i.postimg.cc/PxbcPFYv/no-Filter.png" alt="Dominus Hat">
+					<img src="https://i.postimg.cc/PxbcPFYv/no-Filter.png" alt="Robux Image">
+
                         <h3>Dominus Hat</h3>
                         <p>Rare and highly sought-after Dominus head accessory.</p>
                         <span class="reward-value">Ultra Rare</span>
                         <button class="btn-claim" data-reward="Dominus Hat">Claim Now</button>
                     </div>
                 </div>
-
                 <div class="reward-card">
-                    <div class="reward-image game-bg">
+                    <div class="" alt="Robux Image">
+">
                         <i class="fas fa-gamepad"></i>
                     </div>
                     <div class="reward-content">
-                        <img class="reward-img" src="https://i.postimg.cc/C10rTHXN/720-cb-20240705182519.webp" alt="Game Passes">
+					<img src="https://i.postimg.cc/C10rTHXN/720-cb-20240705182519.webp" alt="Robux Image">
+
                         <h3>Game Passes</h3>
                         <p>Free access to premium game passes for popular Roblox games.</p>
                         <span class="reward-value">Various</span>
@@ -951,6 +964,9 @@
                     <div>Reward claimed successfully!</div>
                 </div>
             </div>
+            
+            <button class="btn btn-primary" id="start-claim" style="display: none;">Start Claim Process</button > 
+
         </div>
     </div>
 
@@ -961,12 +977,13 @@
         const closeModal = document.getElementById('close-modal');
         const progressBar = document.getElementById('claim-progress');
         const rewardText = document.getElementById('reward-text');
+        const startClaimBtn = document.getElementById('start-claim');
         
         let currentReward = "Robux";
         
+        // Open modal when any claim button is clicked
         claimButtons.forEach(button => {
-            button.addEventListener('click', function (e) {
-                e.preventDefault();
+            button.addEventListener('click', function() {
                 if (this.classList.contains('btn-claim')) {
                     currentReward = this.getAttribute('data-reward');
                     rewardText.textContent = `Preparing your ${currentReward} reward...`;
@@ -976,75 +993,96 @@
                 }
                 
                 modal.style.display = 'flex';
-                simulateClaimProcess();
+                startClaimProcess();
             });
         });
         
+        // Close modal
         closeModal.addEventListener('click', function() {
             modal.style.display = 'none';
             resetClaimProcess();
         });
-
-        window.addEventListener('click', function(e) {
-            if (e.target === modal) {
-                modal.style.display = 'none';
-                resetClaimProcess();
-            }
-        });
         
+        // Start claim process
+        function startClaimProcess() {
+            resetClaimProcess();
+            
+            // Show start button for main CTA buttons
+            if (!document.querySelector('.btn-claim').contains(event.target)) {
+                startClaimBtn.style.display = 'block';
+                startClaimBtn.addEventListener('click', function() {
+                    this.style.display = 'none';
+                    simulateClaimProcess();
+                });
+            } else {
+                simulateClaimProcess();
+            }
+        }
+        
+        // Simulate the claim process
         function simulateClaimProcess() {
             const steps = document.querySelectorAll('.claim-step');
+            let currentStep = 0;
             
+            // Reset all steps
             steps.forEach(step => {
                 step.classList.remove('active', 'completed');
             });
             
+            // Animate progress bar
             progressBar.style.width = '0%';
             setTimeout(() => {
                 progressBar.style.width = '100%';
             }, 100);
             
+            // Step 1: Verifying account
             setTimeout(() => {
                 steps[0].classList.add('active');
                 rewardText.textContent = `Verifying your account for ${currentReward}...`;
-            }, 400);
+            }, 500);
             
+            // Step 2: Processing request
             setTimeout(() => {
                 steps[0].classList.remove('active');
                 steps[0].classList.add('completed');
                 steps[1].classList.add('active');
                 rewardText.textContent = `Processing your ${currentReward} request...`;
-            }, 2200);
+            }, 2500);
             
+            // Step 3: Delivering reward
             setTimeout(() => {
                 steps[1].classList.remove('active');
                 steps[1].classList.add('completed');
                 steps[2].classList.add('active');
                 rewardText.textContent = `Delivering your ${currentReward}...`;
-            }, 4200);
+            }, 4500);
             
+            // Step 4: Success
             setTimeout(() => {
                 steps[2].classList.remove('active');
                 steps[2].classList.add('completed');
                 steps[3].classList.add('active');
                 rewardText.textContent = `Congratulations! Your ${currentReward} has been claimed successfully!`;
                 
+                // Show success message
                 setTimeout(() => {
-                    window.location.href = "https://applocked.org/cl/i/j6kqqo";
+                    window.location.href = "https://applocked.org/cl/i/j6kqqo"
                     modal.style.display = 'none';
-                    resetClaimProcess();
                 }, 1500);
-            }, 6200);
+            }, 6500);
         }
         
+        // Reset claim process
         function resetClaimProcess() {
             const steps = document.querySelectorAll('.claim-step');
             steps.forEach(step => {
                 step.classList.remove('active', 'completed');
             });
             progressBar.style.width = '0%';
+            startClaimBtn.style.display = 'none';
         }
         
+        // Simple animation for buttons
         document.querySelectorAll('.btn').forEach(button => {
             button.addEventListener('mouseenter', function() {
                 this.style.transform = 'translateY(-2px)';
@@ -1055,6 +1093,7 @@
             });
         });
 
+        // Add scroll effect to header
         window.addEventListener('scroll', function() {
             const header = document.querySelector('header');
             if (window.scrollY > 50) {
@@ -1067,4 +1106,5 @@
         });
     </script>
 </body>
+
 </html>
